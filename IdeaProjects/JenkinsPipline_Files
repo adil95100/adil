@@ -9,7 +9,7 @@ pipeline {
      
         stage('Build') {
             steps {
-	         echo "Building By  ${params.PERSON}"
+	         echo "Building By--->  ${params.PERSON}"
             }
         }
         stage('Test') {
