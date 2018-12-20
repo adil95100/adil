@@ -1,0 +1,25 @@
+pipeline {
+    agent none
+    parameters{
+	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Who should I say hello to?')	
+    }
+    
+    stages {
+    
+        stage('Build') {
+            steps {
+                echo "Building By  ${params.PERSON}"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing By ${params.PERSON}" 
+                }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying By ${params.PERSON}"
+            }
+        }
+    }
+}
