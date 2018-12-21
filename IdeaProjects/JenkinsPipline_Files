@@ -7,17 +7,14 @@ pipeline {
     }
     
     stages {
-	    steps {
-		    script{    
-		           def a = 5
-     
+	   
         stage('Build') {
             steps {
 	       
 	         echo "Building By-ttt>  ${params.PERSON}"
-		 echo " a= ${a} "
+		 
             }
-	           }
+	           
         }
         stage('Test') {
             steps {
@@ -29,6 +26,6 @@ pipeline {
                 echo "Deploying By ${params.PERSON}"
             }
         }
-	    }
-        }
+	   
     }
+}
