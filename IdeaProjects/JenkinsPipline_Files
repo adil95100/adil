@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 pipeline {
     agent none
+    def a = 5
     parameters{
 	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')	
     }
@@ -10,7 +11,7 @@ pipeline {
      
         stage('Build') {
             steps {
-	       def a = 5
+	       
 	         echo "Building By-ttt>  ${params.PERSON}"
 		 echo " a= ${a} "
             }
