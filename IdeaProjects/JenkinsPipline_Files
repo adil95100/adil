@@ -1,7 +1,7 @@
 pipeline {
     agent none
     parameters{
-	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Who should I say hello to?')	
+	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')	
     }
     
     stages {
@@ -9,7 +9,9 @@ pipeline {
      
         stage('Build') {
             steps {
+	    def a=5;
 	         echo "Building By-ttt>  ${params.PERSON}"
+		 echo " a = ${a}"
             }
         }
         stage('Test') {
