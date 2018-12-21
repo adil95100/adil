@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 pipeline {
     agent none
     parameters{
@@ -9,9 +10,9 @@ pipeline {
      
         stage('Build') {
             steps {
-	   
+	       def a=5
 	         echo "Building By-ttt>  ${params.PERSON}"
-		 
+		 echo " a= ${a} "
             }
         }
         stage('Test') {
