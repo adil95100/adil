@@ -7,8 +7,9 @@ pipeline {
     }
     
     stages {
-	    script{
-		    def a = 5
+	    steps {
+		    script{    
+		           def a = 5
      
         stage('Build') {
             steps {
@@ -28,5 +29,7 @@ pipeline {
                 echo "Deploying By ${params.PERSON}"
             }
         }
+	    }
+    }
     }
 }
