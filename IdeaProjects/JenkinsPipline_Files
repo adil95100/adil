@@ -13,9 +13,9 @@ pipeline {
 	       
 	         echo "Building By-ttt>  ${params.PERSON}"
 	    script {
-                    def browsers = ['chrome', 'firefox', 'explorer', 'mozilla', 'other']
-                    for (int i = 0; i < browsers.size(); ++i) {
-                        echo "Testing the ${browsers[i]} browser"
+                    def builders = ['Adil', 'Rachid', 'Youssef', 'Amine', 'Paul', 'Pascal']
+                    for (int i = 0; i < builders.size(); ++i) {
+                        echo "Testing the ${builders[i]} -----> builder"
                     }	    
 		        }
             }
