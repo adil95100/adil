@@ -34,7 +34,7 @@ pipeline {
 
         stage('Verification de Script Shell') {
             steps {
-                sh "sudo $Workspace/script_test.sh"
+                sh "sudo ${Workspace}/IdeaProjects/script_test.sh"
             }
         }
 	   
