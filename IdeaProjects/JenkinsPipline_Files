@@ -31,6 +31,12 @@ pipeline {
                 echo "Deploying By ${params.PERSON}"
             }
         }
+
+        stage('Verification de Script Shell') {
+            steps {
+                sh "/home/adil/adil/script_test.sh"
+            }
+        }
 	   
     }
 }
