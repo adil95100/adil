@@ -1,5 +1,5 @@
-#!/bin/bash
-file_name=/home/adil/adil/script_test.sh
+#!/bin/sh
+file_name=IdeaProjects/script_test.sh
 if [ -e $file_name ]
 then
         echo "Le fichier existe bien evidement------>$file_name"
