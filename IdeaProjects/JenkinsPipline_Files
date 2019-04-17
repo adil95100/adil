@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent none
+    agent any
     
     parameters{
 	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')	
