@@ -34,7 +34,7 @@ pipeline {
 
         stage('Verification de Script Shell') {
             steps {
-                sh "${WORKSPACE}/adil/script_test.sh"
+                sh "/script_test.sh"
             }
         }
 	   
