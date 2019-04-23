@@ -19,7 +19,7 @@ grisclair='\e[0;37m'
 blanc='\e[1;37m'
 neutre='\e[0;m'
 
-tab=("$noir" "$gris" "$rougefonce" "$rose" "$bleufonce" "$vertfonce")
+tab=($noir $gris $rougefonce $rose $bleufonce $vertfonce)
 LisezMoi()
 {
 for i in {0..5}
