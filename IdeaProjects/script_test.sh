@@ -20,7 +20,7 @@ neutre='\e[0;m'
 
 
 
-tab=($noir $gris $rougefonce $rose $bleufonce $vertfonce)
+tab = ($noir $gris $rougefonce $rose $bleufonce $vertfonce)
 
 function LisezMoi() {
 for i in {0..5}
