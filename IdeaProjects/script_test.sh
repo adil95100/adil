@@ -31,7 +31,7 @@ done
 }
 
 
-file_name=IdeaProjects/script_test.sh
+file_name=/IdeaProjects/script_test.sh
 if [ -e $file_name ]
 then
         echo "Le fichier existe bien evidement------>$file_name"
