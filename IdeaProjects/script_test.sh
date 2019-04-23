@@ -1,7 +1,7 @@
 #!/bin/sh
 # Make a copy of the file 
 
-function LisezMoi() {
+function LisezMoi(){
 for i in {0..5}
 do
 echo -e "======================================================================"
