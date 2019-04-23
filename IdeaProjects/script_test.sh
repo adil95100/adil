@@ -20,14 +20,13 @@ neutre='\e[0;m'
 
 
 
-tab = ($noir $gris $rougefonce $rose $bleufonce $vertfonce)
 
 function LisezMoi() {
 for i in {0..5}
 do
-echo -e "${tab[i]}==================================================== ${neutre}"
+echo -e "${rougefonce}==================================================== ${neutre}"
 echo -e "========Bienvenu Dans le SCript Shell pour utiliser les fonctions====="
-echo -e "${tab[i]}==================================================== ${neutre}"
+echo -e "${rougefonce}==================================================== ${neutre}"
 done
 }
 
