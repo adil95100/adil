@@ -19,32 +19,32 @@ blanc='\e[1;37m'
 neutre='\e[0;m'
 
 
-
+tab=($noir $gris $rougefonce $rose $bleufonce $vertfonce)
 
 function LisezMoi() {
 for i in {0..5}
 do
-echo -e "${rougefonce}==================================================== ${neutre}"
+echo -e "${tab[i]}==================================================== ${neutre}"
 echo -e "========Bienvenu Dans le SCript Shell pour utiliser les fonctions====="
-echo -e "${rougefonce}==================================================== ${neutre}"
+echo -e "${tab[i]}==================================================== ${neutre}"
 done
 }
 
-
-file_name=/IdeaProjects/script_test.sh
-if [ -e $file_name ]
-then
-        echo "Le fichier existe bien evidement------>$file_name"
-	echo "Salam aller Dima Maroc"
-	LisezMoi
-else
-        echo "le fichier makayenche les amis ??????????????"
-	echo "enfin c'est juste un petit test"
-fi
-echo "nom de script=$0"
-if ($(who | grep adil|wc -l) -ge 1)
-then
-  echo " adil est connecté"
-else
-      " adil n'est pas connecté"	
-fi  
+LisezMoi
+#file_name=/IdeaProjects/script_test.sh
+#if [ -e $file_name ]
+#then
+#        echo "Le fichier existe bien evidement------>$file_name"
+#	echo "Salam aller Dima Maroc"
+#	LisezMoi
+#else
+#        echo "le fichier makayenche les amis ??????????????"
+#	echo "enfin c'est juste un petit test"
+#fi
+#echo "nom de script=$0"
+#if ($(who | grep adil|wc -l) -ge 1)
+#then
+#  echo " adil est connecté"
+#else
+#      " adil n'est pas connecté"	
+#fi  
