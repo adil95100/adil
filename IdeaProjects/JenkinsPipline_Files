@@ -8,6 +8,7 @@ pipeline {
     
     environment {
         def build = readYaml file: "${WORKSPACE}/build.yaml"
+                }
     
 stages {
 	 
