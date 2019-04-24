@@ -8,16 +8,21 @@ pipeline {
 
     environment {
         def build = readYaml file: "${WORKSPACE}/IdeaProjects/build.yaml"
+        
+        nom = "${build.Lanceur.nom}"
+        prenom = "${build.Lanceur.prenom}"
+        age = "${build.Lanceur.age}"
+        domaine = "${build.Lanceur.domaine}" 
                 }
 
 stages {
 
         stage('Info Lancement de la Pipline') {
             steps {
-        echo "Le nom de lanceur de la pipline ======> ${build.Lanceur.nom}"
-        echo "Le prenom de lanceur de la pipline ======> ${build.Lanceur.prenom}"
-        echo "L age de lanceur de la pipline ======> ${build.Lanceur.age}"
-        echo "Le domaine de lanceur de la pipline ======> ${build.Lanceur.domaine}"
+        echo "Le nom de lanceur de la pipline ======> ${env.nom}"
+        echo "Le prenom de lanceur de la pipline ======> ${env.prenom}"
+        echo "L age de lanceur de la pipline ======> ${env.age}"
+        echo "Le domaine de lanceur de la pipline ======> ${env.domaine}"
                    }
                                               }
         stage('Build') {
