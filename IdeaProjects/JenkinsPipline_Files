@@ -2,18 +2,21 @@
 pipeline {
     agent any
 
+
+    environment {
+        def build = readYaml file: "${WORKSPACE}/IdeaProjects/build.yaml"
+
+        nom = "${build.Lanceur.nom}"
+        prenom = "${build.Lanceur.prenom}"
+        age = "${build.Lanceur.age}"
+        domaine = "${build.Lanceur.domaine}"
+                }
+
+
     parameters{
              string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')
     }
 
-    environment {
-        def build = readYaml file: "${WORKSPACE}/IdeaProjects/build.yaml"
-        
-        nom = "${build.Lanceur.nom}"
-        prenom = "${build.Lanceur.prenom}"
-        age = "${build.Lanceur.age}"
-        domaine = "${build.Lanceur.domaine}" 
-                }
 
 stages {
 
