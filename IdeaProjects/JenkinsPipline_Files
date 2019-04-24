@@ -1,41 +1,41 @@
 #!groovy
 pipeline {
     agent any
-    
+
     parameters{
-	     string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')	
+             string(name: 'PERSON', defaultValue: 'Mr MAMOUNE', description: 'Mes Premiers pas sur la programation DevOps')
     }
-    
+
     environment {
         def build = readYaml file: "${WORKSPACE}/build.yaml"
                 }
-    
+
 stages {
-	 
+
         stage('Info Lancement de la Pipline') {
             steps {
         echo "Le nom de lanceur de la pipline ======> ${build.Lanceur.nom}"
         echo "Le prenom de lanceur de la pipline ======> ${build.Lanceur.prenom}"
         echo "L age de lanceur de la pipline ======> ${build.Lanceur.age}"
-        echo "Le domaine de lanceur de la pipline ======> ${build.Lanceur.domaine}" 
+        echo "Le domaine de lanceur de la pipline ======> ${build.Lanceur.domaine}"
                    }
                                               }
         stage('Build') {
             steps {
-	       
-	         echo "Building By-ttt>  ${params.PERSON}"
-	    script {
+
+                 echo "Building By-ttt>  ${params.PERSON}"
+            script {
                     def builders = ['Adil', 'Rachid', 'Youssef', 'Amine', 'Paul', 'Pascal']
                     for (int i = 0; i < builders.size(); ++i) {
                         echo "Testing the ${builders[i]} -----> builder"
-                    }	    
-		        }
+                    }
+                        }
             }
-	           
+
         }
         stage('Test') {
             steps {
-                echo "Testing Bytt ${params.PERSON}" 
+                echo "Testing Bytt ${params.PERSON}"
                 }
         }
         stage('Deploy') {
@@ -44,14 +44,12 @@ stages {
             }
         }
 
-        stage('Verification de Script Shell') {
+        stage('Verification de Script Shell'){
             steps {
                 sh " ${WORKSPACE}/IdeaProjects/script_test.sh"
             }
         }
-	   
+
     }
 }
 
-
-  
