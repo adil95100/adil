@@ -61,13 +61,14 @@ stages {
             }
         }
 
-        stage('send email') {
-      steps{
-        script {
-            mail bcc: '', body: 'Ceci est un test d\'envoi d\'email', cc: '', from: '', replyTo: '', subject: '', to: 'adil_mamoune@carrefour.com'
+        post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "adil_mamoune@carrefour.com",
+            sendToIndividuals: true])
         }
       }
-    }
 
     }
 }
