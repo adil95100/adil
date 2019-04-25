@@ -64,20 +64,10 @@ stages {
 
      post {
          success {
-            sh 'echo "Success !"'
-            rocketSend channel: 'c4-platine', message: 'Pipeline is in success', emoji:':thumbsup:'
-        }
+            sh 'echo "Success ! ******@@@@@@*********"'
+                 }
 
-        failure {
-            sh 'echo "Failure !"'
-            rocketSend channel: 'c4-platine', message: 'Pipeline is in failure', emoji:':thumbsdown:'
-        }
-
-        unstable {
-            sh 'echo "Unstable !"'
-            
-
-        }
+       
         }
       }
 
