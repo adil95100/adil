@@ -2,7 +2,10 @@
 pipeline {
     agent any
 
-
+    options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    disableConcurrentBuilds()
+  }
     environment {
         def build = readYaml file: "${WORKSPACE}/IdeaProjects/build.yaml"
 
@@ -57,6 +60,14 @@ stages {
                 sh " ${WORKSPACE}/IdeaProjects/script_test.sh"
             }
         }
+
+        stage('send email') {
+      steps{
+        script {
+            mail bcc: '', body: 'Ceci est un test d\'envoi d\'email', cc: '', from: '', replyTo: '', subject: '', to: 'adil_mamoune@carrefour.com'
+        }
+      }
+    }
 
     }
 }
