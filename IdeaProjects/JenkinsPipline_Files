@@ -63,11 +63,21 @@ stages {
     }
 
      post {
-        always {
-          step([$class: 'Mailer',
-            notifyEveryUnstableBuild: true,
-            recipients: "adil_mamoune@carrefour.com",
-            sendToIndividuals: true])
+         success {
+            sh 'echo "Success !"'
+            rocketSend channel: 'c4-platine', message: 'Pipeline is in success', emoji:':thumbsup:'
+        }
+
+        failure {
+            sh 'echo "Failure !"'
+            rocketSend channel: 'c4-platine', message: 'Pipeline is in failure', emoji:':thumbsdown:'
+        }
+
+        unstable {
+            sh 'echo "Unstable !"'
+            
+
+        }
         }
       }
 
